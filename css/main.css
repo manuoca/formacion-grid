@@ -1,0 +1,118 @@
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  background-color: #023047;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  margin-top: 50vh;
+  text-align: center;
+}
+
+img {
+  margin: auto;
+  display: block;
+  height: auto;
+  width: 80%;
+  height: 80vh;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 80vh;
+  background-color: white;
+  border: medium solid #222;
+}
+
+.item {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #219ebc;
+  border: medium solid #8ecae6;
+  text-align: center;
+}
+
+.menu-burger {
+  position: fixed;
+}
+
+.menu-burger a, .link {
+  color: #ffb703;
+  font-size: 30px;
+}
+
+.menu-burger a:hover,
+.link:hover {
+  color: #fb8500;
+  cursor: pointer;
+}
+
+.menu-lateral {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #ffb703;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.menu-lateral a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #023047;
+  display: block;
+  transition: 0.3s;
+}
+
+.menu-lateral a:hover {
+  color: black;
+}
+
+.menu-lateral .boton-cerrar {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+.autor {
+  bottom: 10px;
+    left: 5px;
+    position: absolute;
+}
+
+ul {
+  text-align: center;
+}
+
+li {
+  margin: 10px 0px;
+  list-style: none;
+}
