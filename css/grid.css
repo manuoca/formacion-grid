@@ -70,8 +70,8 @@
   grid-column: repeat(4, 1fr);
 
   grid-template-areas:  "header header header header"
-                        "section section aside aside"
-                        "article article aside aside"
+                        "section section section aside"
+                        "article article article aside"
                         "footer footer footer footer";
 
   row-gap: 5px;
