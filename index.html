@@ -35,10 +35,11 @@
     <div class="menu-lateral">
         <a href="javascript:void(0)" class="boton-cerrar">&times;</a>
         <a href="#grid-intro">Introducción</a>
-        <a href="#grid-cuadricula">Grid Cuadricula</a>
         <a href="#grid-template">Grid Template</a>
         <a href="#grid-lines">Líneas</a>
         <a href="#grid-areas">Áreas</a>
+        <a href="#grid-auto-flow">Grid auto flow</a></h2>
+        <a href="#grid-implicit">Grid implicito</a></h2>
         <a href="#grid-minmax">MinMax</a>
         <a href="#grid-fill-fit">Fill y Fit</a>
         <a href="#grid-layer">Superposicion</a>
@@ -55,32 +56,12 @@
     <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cesBcJ0z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/t4174up8thke8meg0zxt.png"
         alt="Conceptos Básicos">
 
-    <h2 id="grid-cuadricula">Grid Cuadricula</h2>
-    <section class="container grid-cuadricula">
-        <!-- .item.item-$*9>{item$} -->
-        <div class="item item-1">item1</div>
-        <div class="item item-2">item2</div>
-        <div class="item item-3">item3</div>
-        <!--<div class="item item-4">item4</div>
-        <div class="item item-5">item5</div>
-        <div class="item item-6">item6</div>
-        <div class="item item-7">item7</div>
-        <div class="item item-8">item8</div>
-        <div class="item item-9">item9</div> -->
-    </section>
-
-    <h2 id="grid-template">Grid template</h2>
+    <h2 id="grid-template">Grid Template</h2>
     <section class="container grid-template">
         <!-- .item.item-$*9>{item$} -->
         <div class="item item-1">item1</div>
         <div class="item item-2">item2</div>
         <div class="item item-3">item3</div>
-        <div class="item item-4">item4</div>
-        <div class="item item-5">item5</div>
-        <div class="item item-6">item6</div>
-        <div class="item item-7">item7</div>
-        <div class="item item-8">item8</div>
-        <div class="item item-9">item9</div>
     </section>
 
     <h2 id="grid-lines">Grid Lineas</h2>
@@ -99,31 +80,16 @@
 
     <h2 id="grid-areas">Grid con Áreas</h2>
     <section class="container grid-areas">
-        <header class="item">header</header>
+        <div class="item header">header</div>
+        <div class="item aside">aside</div>
+        <div class="item section">section</div>
+        <div class="item article">article</div>
+        <div class="item footer">footer</div>
+        <!-- <header class="item">header</header>
         <aside class="item">aside</aside>
         <section class="item">section</section>
         <article class="item">article</article>
-        <footer class="item">footer</footer>
-    </section>
-
-    <h2 id="grid-minmax">min-content y max-content</h2>
-
-    <section class="container grid-minmax">
-        <!-- .item.item-$*9>{item$} -->
-        <div class="item">E unum</div>
-        <div class="item">E pluribus</div>
-        <div class="item">Lorem ipsum.</div>
-        <div class="item">dolor</div>
-        <div class="item">provident explicabo pariatur ite ron</div>
-        <div class="item">ex</div>
-    </section>
-    <h2 id="grid-fill-fit">auto-fill y auto fit</h2>
-
-    <section class="container grid-fill-fit">
-        <!-- .item.item-$*9>{item$} -->
-        <div class="item">item1</div>
-        <div class="item">item2</div>
-
+        <footer class="item">footer</footer> -->
     </section>
     <br>
     <br>
@@ -141,8 +107,9 @@
         <div class="item">item5</div>
     </section>
 
-    <h2 id="grid-responsive">Responsive sin Media Queries</h2>
-    <section class="container grid-responsive">
+    <h2 id="grid-auto-flow">Grid auto flow</h2>
+    <section class="container grid-auto-flow">
+        <!-- .item.item-$*9>{item$} -->
         <div class="item item-1">item1</div>
         <div class="item item-2">item2</div>
         <div class="item item-3">item3</div>
@@ -154,6 +121,46 @@
         <div class="item item-9">item9</div>
     </section>
 
+    <h2 id="grid-implicit">Grid implicito</h2>
+    <section class="container grid-implicit">
+        <!-- .item.item-$*9>{item$} -->
+        <div class="item item-1">item1</div>
+        <div class="item item-2">item2</div>
+        <div class="item item-3">item3</div>
+        <div class="item item-4">item4</div>
+        <div class="item item-5">item5</div>
+        <div class="item item-6">item6</div>
+        <div class="item item-7">item7</div>
+        <div class="item item-8">item8</div>
+        <div class="item item-9">item9</div>
+    </section>
+
+    <h2 id="grid-minmax">min-content y max-content</h2>
+    <section class="container grid-minmax">
+        <!-- .item.item-$*9>{item$} -->
+        <div class="item">E unum</div>
+        <div class="item">E pluribus</div>
+        <div class="item">Lorem ipsum.</div>
+        <div class="item">dolor</div>
+        <div class="item">provident explicabo pariatur ite ron</div>
+        <div class="item">ex</div>
+    </section>
+
+    <h2 id="grid-fill-fit">auto-fill y auto fit</h2>
+    <section class="container grid-fill-fit">
+        <!-- .item.item-$*9>{item$} -->
+        <div class="item item-1">item1</div>
+        <div class="item item-2">item2</div>
+    </section>
+
+
+    <h2 id="grid-responsive">Responsive sin Media Queries</h2>
+    <section class="container grid-responsive">
+        <div class="item item-1">item1</div>
+        <div class="item item-2">item2</div>
+
+    </section>
+
     <h2 id="grid-recursos">Recursos</h2>
     <ul>
         <li><a class="link" href="https://gridbyexample.com/">Grid by example</a></li>
@@ -162,7 +169,6 @@
         <li><a class="link" href="https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/">Grid Css
                 (lenguaje-css.com)</a></li>
         <li><a class="link" href="https://gridgenerator-75cc4.firebaseapp.com/">Generador (app vue.js)</a></li>
-        <li><a class="link" href="https://www.gridcss.com/">gridcss.com</a></li>
         <li><a class="link" href="https://grid.layoutit.com/">layoutit</a></li>
         <li><a class="link" href="https://cssgrid-generator.netlify.app/">css grid generator</a></li>
     </ul>
