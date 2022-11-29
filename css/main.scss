@@ -1,0 +1,114 @@
+%item {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #219ebc;
+    border: medium solid #8ecae6;
+    text-align: center;
+  }
+
+  .grid-template {
+
+    .item {
+      @extend %item;
+
+
+    }
+
+  }
+
+  .grid-lineas {
+    display: grid;
+
+    .item {
+      @extend %item;
+
+    }
+  }
+
+
+  .grid-areas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+
+    .item {
+      @extend %item;
+
+      &.header {
+        background: green;
+      }
+
+      &.aside {
+        background:yellow;
+      }
+
+      &.section {
+
+      }
+
+      &.article {
+        background: violet;
+      }
+
+      &.footer {
+        background: red;
+      }
+    }
+  }
+
+
+
+  .grid-auto-flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr;
+
+    .item {
+      @extend %item;
+
+    }
+  }
+
+  .grid-implicit {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 200px;
+
+    .item {
+      @extend %item;
+
+    }
+  }
+
+
+  .grid-minmax {
+      display: grid;
+
+      .item {
+        @extend %item;
+      }
+  }
+
+  .grid-fill-fit {
+      display: grid;
+
+      .item {
+        @extend %item;
+
+      }
+  }
+
+
+  .grid-responsive {
+    display: grid;
+
+    .item {
+      @extend %item;
+    }
+  }
+
+
+  .grid-layers {
+
+  }
