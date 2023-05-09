@@ -1,4 +1,5 @@
-%item {
+// MIXINS
+@mixin item {
   padding: 1rem;
   font-size: 1.25rem;
   background-color: #219ebc;
@@ -6,6 +7,7 @@
   text-align: center;
 }
 
+// EJEMPLO 1
 .grid-template {
   display: grid;
   grid-template-columns: 150px 150px 150px;
@@ -13,13 +15,38 @@
   // grid-template-columns: 25% auto 1fr;
   // grid-template-columns: 1fr repeat(3, 150px) 1fr;
   // grid-template-rows: repeat(2, 1fr);
+
+  // Unidades más usadas: 100px, 25%, auto, 1fr
+  // px y % no tienen en cuenta el gap para calcular el tamaño que ocupan
+  // auto y fr sí lo tienen en cuenta
+
+  // Auto vs 1fr
+  // 1fr reparte el contenido equitativamente
+  // Auto reparte el espacio pero adaptándolo al contenido
+
   // row-gap: 5px;
   // column-gap: 5px;
+  // grid-gap: 5px;
+  // gap: 10px;
+
+  // order: 1;
+  // order: -1;
 
   .item {
-    @extend %item;
+    @include item;
+  }
+}
 
-    &-1 {
+// EJEMPLO 2
+.grid-lineas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 200px;
+
+  .item {
+    @include item;
+
+    &-3 {
       background-color: red;
       grid-column-start: 1;
       grid-column-end: 3;
@@ -31,6 +58,7 @@
 
       // grid-column: 1 / 2;
       // grid-row: 1 / 3;
+
       // grid-area: 1 / 1 / 3 / 4;
 
       // grid-column: span 3;
@@ -38,49 +66,40 @@
       // grid-column: 1 / span 3;
       // grid-column: 5;
       // grid-row: 2;
-      // grid-column: span 2;
-    }
-  }
+      // grid-row: span 2;
 
-}
+      // grid-template-columns: [c-start] 150px [c-medio] 150px [c-end];
+      // grid-template-columns: [c-start] repeat(4, 1fr [c-medio]) [c-end];
+      // grid-template-rows: [r-start] 25% [r-medio] 100px [r-medio] 100px [r-end];
 
-.grid-lineas {
-  display: grid;
-  grid-template-columns: [c-start] repeat(4, 1fr [c-medio]) [c-end];
-  grid-template-rows: [r-start] 25% [r-medio] 100px [r-medio] 2fr [r-end];
-
-  .item {
-    @extend %item;
-
-    &-1 {
-      grid-column-start: c-start;
-      grid-column-end: c-medio 2;
-      grid-row-start: r-start;
-      grid-row-end: r-medio 2;
-      background: red
+      // grid-column-start: c-start;
+      // grid-column-end: c-medio 2;
+      // grid-row-start: r-start;
+      // grid-row-end: r-medio 2;
+      // background: red;
 
       // grid-column: c-start / c-end;
       // grid-row: r-start / r-end;
 
       // grid-area: r-start / c-start / r-end / c-end;
     }
-
   }
 }
 
-
+// EJEMPLO 3
 .grid-areas {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
 
-  grid-template-areas:  "header header header header"
-                        "section section section aside"
-                        "article article article aside"
-                        "footer footer footer footer";
+  grid-template-areas:
+    "header header header header"
+    "section section section aside"
+    "article article article aside"
+    "footer footer footer footer";
 
   .item {
-    @extend %item;
+    @include item;
 
     &.header {
       grid-area: header;
@@ -89,12 +108,11 @@
 
     &.aside {
       grid-area: aside;
-      background:yellow;
+      background: yellow;
     }
 
     &.section {
       grid-area: section;
-
     }
 
     &.article {
@@ -109,18 +127,19 @@
   }
 }
 
-
-
+// EJEMPLO 4
 .grid-auto-flow {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr 1fr;
-  grid-auto-flow: row;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-flow: dense;
+  // grid-auto-flow: row;
+  // grid-auto-flow: column;
 
   .item {
-    @extend %item;
+    @include item;
 
-    &-1{
+    &-1 {
       grid-column: 1;
       grid-row: 1 / 3;
     }
@@ -136,6 +155,7 @@
   }
 }
 
+// EJEMPLO 5
 .grid-implicit {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -144,74 +164,69 @@
   grid-auto-rows: 200px;
 
   .item {
-    @extend %item;
-
+    @include item;
   }
 }
 
-
+// EJEMPLO 6
 .grid-minmax {
-    display: grid;
-    grid-template-columns: 1fr max-content min-content;
-    grid-template-columns: 1fr max-content minmax(200px, min-content);
+  display: grid;
+  grid-template-columns: 1fr max-content min-content;
+  //  grid-template-columns: 1fr max-content minmax(200px, min-content);
 
-    .item {
-      @extend %item;
-    }
+  .item {
+    @include item;
+  }
 }
 
+// EJEMPLO 7
 .grid-fill-fit {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 100px);
-    // grid-template-columns: repeat(auto-fit, 100px);
-
-    .item {
-      @extend %item;
-
-      &-2 {
-        grid-column: -2;
-      }
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  //  grid-template-columns: repeat(auto-fit, 100px);
+  //  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  .item {
+    @include item;
+  }
 }
 
-
+// EJEMPLO 8
 .grid-responsive {
   display: grid;
   // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-
   .item {
-    @extend %item;
+    @include item;
   }
 }
 
-
+// EJERCICIO LAYER
 .grid-layers {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 100px);
 
   .item {
-    @extend %item;
-
-    &:nth-child(1) {
+    @include item;
+    &-1 {
       grid-area: 1 / 1 / 3 / 3;
       background-color: #fb8500;
     }
-    &:nth-child(2) {
+    &-2 {
       grid-area: 1 / 3 / 3 / 5;
       background-color: #48b669;
     }
-    &:nth-child(3) {
-      grid-area: 3 / 1 / 5 / 3;
+    &-3 {
+      grid-area: 2 / 2 / 4 / 4;
+      order: 1;
       background-color: #c22f85;
     }
-    &:nth-child(4) {
+    &-4 {
       grid-area: 3 / 3 / 5 / 5;
       background-color: #17478f;
     }
-    &:nth-child(5) {
-      grid-area: 2 / 2 / 4 / 4;
+    &-5 {
+      grid-area: 3 / 1 / 5 / 3;
       background-color: #bd2727;
     }
   }
