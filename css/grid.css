@@ -8,6 +8,8 @@
 
 .grid-lineas {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 200px;
 }
 .grid-lineas .item {
   padding: 1rem;
@@ -35,6 +37,9 @@
 .grid-areas .item.aside {
   background: yellow;
 }
+.grid-areas .item.section {
+  background: #219ebc;
+}
 .grid-areas .item.article {
   background: violet;
 }
@@ -45,7 +50,7 @@
 .grid-auto-flow {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 .grid-auto-flow .item {
   padding: 1rem;
@@ -53,6 +58,17 @@
   background-color: #219ebc;
   border: medium solid #8ecae6;
   text-align: center;
+}
+.grid-auto-flow .item-1 {
+  grid-column: 1;
+  grid-row: 1/3;
+}
+.grid-auto-flow .item-5 {
+  grid-column: 5;
+  grid-row: 1/3;
+}
+.grid-auto-flow .item-8 {
+  grid-column: span 2;
 }
 
 .grid-implicit {
@@ -101,4 +117,10 @@
   text-align: center;
 }
 
-/*# sourceMappingURL=grid.css.map */
+.grid-layers .item {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #219ebc;
+  border: medium solid #8ecae6;
+  text-align: center;
+}
