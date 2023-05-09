@@ -1,31 +1,37 @@
+// MIXINS
 @mixin item {
     padding: 1rem;
     font-size: 1.25rem;
     background-color: #219ebc;
     border: medium solid #8ecae6;
     text-align: center;
+
   }
 
+// EJEMPLO 1
   .grid-template {
 
     .item {
       @include item;
 
-
     }
+}
 
-  }
 
+// EJEMPLO 2
   .grid-lineas {
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 200px 200px;
 
-    .item {
+     .item {
       @include item;
 
     }
   }
 
 
+// EJEMPLO 3
   .grid-areas {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -44,7 +50,7 @@
       }
 
       &.section {
-
+        background: #219ebc;
       }
 
       &.article {
@@ -59,17 +65,33 @@
 
 
 
+// EJEMPLO 4
   .grid-auto-flow {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 
     .item {
       @include item;
 
+      &-1{
+        grid-column: 1;
+        grid-row: 1 / 3;
+      }
+
+      &-5 {
+        grid-column: 5;
+        grid-row: 1 / 3;
+      }
+
+      &-8 {
+        grid-column: span 2;
+      }
     }
   }
 
+
+// EJEMPLO 5
   .grid-implicit {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -82,6 +104,7 @@
   }
 
 
+// EJEMPLO 6
   .grid-minmax {
       display: grid;
 
@@ -90,6 +113,7 @@
       }
   }
 
+// EJEMPLO 7
   .grid-fill-fit {
       display: grid;
 
@@ -99,16 +123,21 @@
       }
   }
 
-
+// EJEMPLO 8
   .grid-responsive {
     display: grid;
 
     .item {
       @include item;
+
     }
   }
 
 
+// EJERCICIO LAYER
   .grid-layers {
 
+    .item {
+      @include item;
+    }
   }
