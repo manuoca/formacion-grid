@@ -38,6 +38,7 @@ img {
 .container {
   margin: 0 auto;
   max-width: 80%;
+  /* height: 80vh; */
   max-height: 80vh;
   background-color: white;
   border: 10px solid rgb(226, 175, 81);
