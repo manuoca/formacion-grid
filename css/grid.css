@@ -106,17 +106,6 @@
   text-align: center;
 }
 
-.grid-responsive {
-  display: grid;
-}
-.grid-responsive .item {
-  padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #219ebc;
-  border: medium solid #8ecae6;
-  text-align: center;
-}
-
 .grid-layers .item {
   padding: 1rem;
   font-size: 1.25rem;

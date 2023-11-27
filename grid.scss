@@ -123,16 +123,6 @@
       }
   }
 
-// EJEMPLO 8
-  .grid-responsive {
-    display: grid;
-
-    .item {
-      @include item;
-
-    }
-  }
-
 
 // EJERCICIO LAYER
   .grid-layers {
